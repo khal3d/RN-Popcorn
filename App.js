@@ -12,8 +12,18 @@ export default class App extends Component {
 }
 const TabNavigator = createBottomTabNavigator(
   {
-    Movies: MoviesScreen,
-    Bookmark: BookmarkScreen,
+    Movies: {
+      screen: MoviesScreen,
+      navigationOptions: {
+        title: 'All Movies',
+      },
+    },
+    Bookmark: {
+      screen: BookmarkScreen,
+      navigationOptions: {
+        title: 'My Movies',
+      },
+    },
   },
   {
     defaultNavigationOptions: ({navigation}) => ({
