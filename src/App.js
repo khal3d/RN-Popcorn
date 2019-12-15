@@ -1,10 +1,10 @@
 import React, {Component} from 'react';
 import {createAppContainer} from 'react-navigation';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import {createStackNavigator} from 'react-navigation-stack';
 import MoviesScreen from './components/screens/MoviesScreen';
 import BookmarkScreen from './components/screens/BookmarkScreen';
-
+import MovieDetails from './components/screens/MovieDetails';
 export default class App extends Component {
   render() {
     return <AppContainer />;
@@ -12,35 +12,10 @@ export default class App extends Component {
 }
 const TabNavigator = createBottomTabNavigator(
   {
-    Movies: {
-      screen: MoviesScreen,
-      navigationOptions: {
-        title: 'All Movies',
-      },
-    },
-    Bookmark: {
-      screen: BookmarkScreen,
-      navigationOptions: {
-        title: 'My Movies',
-      },
-    },
+    MoviesScreen,
+    BookmarkScreen,
   },
   {
-    defaultNavigationOptions: ({navigation}) => ({
-      tabBarIcon: ({focused, horizontal, tintColor}) => {
-        const {routeName} = navigation.state;
-        let IconComponent = Ionicons;
-        let iconName;
-
-        if (routeName === 'Movies') {
-          iconName = 'ios-film';
-        } else if (routeName === 'Bookmark') {
-          iconName = 'ios-bookmark';
-        }
-
-        return <IconComponent name={iconName} size={25} color={tintColor} />;
-      },
-    }),
     tabBarOptions: {
       activeTintColor: 'tomato',
       inactiveTintColor: 'gray',
@@ -48,4 +23,22 @@ const TabNavigator = createBottomTabNavigator(
   },
 );
 
-const AppContainer = createAppContainer(TabNavigator);
+const StackNavigator = createStackNavigator({
+  Home: {
+    screen: TabNavigator,
+    navigationOptions: {
+      header: null,
+    },
+  },
+  MovieDetails: {
+    screen: MovieDetails,
+    navigationOptions: {
+      headerStyle: {
+        backgroundColor: 'tomato',
+      },
+      headerTintColor: '#fff',
+    },
+  },
+});
+
+const AppContainer = createAppContainer(StackNavigator);
