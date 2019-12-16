@@ -94,7 +94,7 @@ export default class MoviesScreen extends Component {
           borderTopWidth: 1,
           borderColor: '#CED0CE',
         }}>
-        <ActivityIndicator animating size="large" />
+        <ActivityIndicator animating size="large" color="tomato" />
       </View>
     );
   };
