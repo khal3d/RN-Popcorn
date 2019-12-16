@@ -70,10 +70,6 @@ export default class AddMovieScreen extends Component {
           ? [...JSON.parse(MyMoviesData), ...[this.state.movie]]
           : [this.state.movie];
       await AsyncStorage.setItem('@MyMovies:list', JSON.stringify(MyMovies));
-      await AsyncStorage.setItem(
-        '@MyMovies:list',
-        JSON.stringify([this.state.movie]),
-      );
 
       this.setState(prevState => {
         return {MyMovies: MyMovies};

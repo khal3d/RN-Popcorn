@@ -7,9 +7,9 @@ import {
   Image,
   View,
 } from 'react-native';
-import Rating from '../Rating';
+import Rating from '../components/Rating';
 
-export default class BookmarkScreen extends Component {
+export default class MovieDetailsScreen extends Component {
   static navigationOptions = ({navigation}) => {
     return {
       title: navigation.getParam('title', 'Movie Details'),

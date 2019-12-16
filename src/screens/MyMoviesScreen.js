@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, FlatList, SafeAreaView} from 'react-native';
 import {Button, ListItem} from 'react-native-elements';
 import AsyncStorage from '@react-native-community/async-storage';
 
-export default class BookmarkScreen extends Component {
+export default class MyMoviesScreen extends Component {
   static navigationOptions = ({navigation}) => {
     return {
       headerRight: () => (

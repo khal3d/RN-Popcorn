@@ -3,10 +3,10 @@ import { createAppContainer } from 'react-navigation';
 import { createBottomTabNavigator } from 'react-navigation-tabs';
 import { createStackNavigator } from 'react-navigation-stack';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import MoviesScreen from './components/screens/MoviesScreen';
-import BookmarkScreen from './components/screens/BookmarkScreen';
-import AddMovieScreen from './components/screens/AddMovieScreen';
-import MovieDetails from './components/screens/MovieDetails';
+import MoviesScreen from './screens/MoviesScreen';
+import MyMoviesScreen from './screens/MyMoviesScreen';
+import AddMovieScreen from './screens/AddMovieScreen';
+import MovieDetailsScreen from './screens/MovieDetailsScreen';
 
 export default class App extends Component {
   render() {
@@ -22,7 +22,7 @@ const HomeStack = createStackNavigator({
     },
   },
   MovieDetails: {
-    screen: MovieDetails,
+    screen: MovieDetailsScreen,
     navigationOptions: {
       headerStyle: {
         backgroundColor: 'tomato',
@@ -41,8 +41,8 @@ const HomeStack = createStackNavigator({
 
 const MyMoviesStack = createStackNavigator(
   {
-    Bookmark: {
-      screen: BookmarkScreen,
+    MyMoviesScreen: {
+      screen: MyMoviesScreen,
       navigationOptions: {
         title: 'My Movies',
         headerStyle: {

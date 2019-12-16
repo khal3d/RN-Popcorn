@@ -9,7 +9,7 @@ import {
 } from 'react-native';
 import {MOVIEDB_API_KEY} from 'react-native-dotenv';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import MoviePosterList from '../MoviePosterList';
+import MoviePosterList from '../components/MoviePosterList';
 
 export default class MoviesScreen extends Component {
   constructor(props) {
