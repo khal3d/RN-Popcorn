@@ -4,6 +4,9 @@ A Mobile React-Native app that reads [TheMovieDB.org](https://themoviedb.org) AP
 the ratings.
 
 ## Demo
+<img src="screenshots/all-movies.png" width="300" /> <img src="screenshots/movie-details.png" width="300" />
+<img src="screenshots/my-movies.png" width="300" /> <img src="screenshots/add-movie.png" width="300" />
+
 
 ## Requirments
 - Java v13 (for android 🤖)
