@@ -5,6 +5,7 @@ import {
   FlatList,
   ActivityIndicator,
   StyleSheet,
+  StatusBar,
 } from 'react-native';
 import {MOVIEDB_API_KEY} from 'react-native-dotenv';
 import Ionicons from 'react-native-vector-icons/Ionicons';
@@ -113,6 +114,7 @@ export default class MoviesScreen extends Component {
 
     return (
       <View>
+        <StatusBar backgroundColor="tomato" barStyle="light-content" />
         <FlatList
           numColumns={2}
           data={this.state.data}
