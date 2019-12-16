@@ -1,13 +1,18 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Button} from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 export default class BookmarkScreen extends Component {
-  static navigationOptions = {
-    tabBarLabel: 'My Movies',
-    tabBarIcon: ({tintColor}) => (
-      <Ionicons name={'ios-bookmark'} size={25} color={tintColor} />
-    ),
+  static navigationOptions = ({ navigation }) => {
+    return {
+      headerRight: () => (
+        <Button
+          onPress={() => navigation.navigate('AddMovie')}
+          title="Add"
+          color="#fff"
+        />
+      ),
+    };
   };
 
   render() {

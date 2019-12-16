@@ -29,6 +29,9 @@ export default class MoviesScreen extends Component {
     tabBarIcon: ({tintColor}) => (
       <Ionicons name={'ios-film'} size={25} color={tintColor} />
     ),
+    navigationOptions: {
+      header: null
+    },
   };
 
   componentDidMount() {
